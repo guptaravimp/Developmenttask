@@ -10,5 +10,35 @@ npm create vite@latest
 ```
 npm install react-hook-form
 ```
+# Lets use this 
+### 3 now first we use below code inside the function where we use this ho0k form to use form 
+```
+const { register, handleSubmit, formState: { errors } } = useForm();
+```
+### Now Import this inside this file 
+```
+import { useForm } from 'react-hook-form';
+```
+### now your file looks like this 
+like this 
+```
+import React from 'react';
+import { useForm } from 'react-hook-form';
+
+function App() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  
+  return (
+    
+      <div>
+       
+      </div>
+  
+  );
+}
+
+export default App;
+```
 
 
