@@ -152,3 +152,11 @@ Now for all type check the documentation :   https://www.react-hook-form.com/get
          {/* ///register with this anme firstname */}
       </div>
 ```
+# vvvvvvvvvimportant login 
+### if we want to submit form once and jab tak submit nahi ho jaye button ko disable karna hai to use (issubmitting) in form state and disable button o is submitting 
+```
+const { register, handleSubmit, formState: { errors,isSubmitting } } = useForm();
+```
+```
+  <input type="submit" disabled={isSubmitting}/>
+```
