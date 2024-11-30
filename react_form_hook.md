@@ -137,3 +137,18 @@ Now for all type check the documentation :   https://www.react-hook-form.com/get
       </div>
 ```
 ##### it will show message below input that min length at least 3 when input is <3 character 
+## 4 Now applying css on error message 
+```
+<div>
+        <label>First Name</label>
+        <input 
+        className={errors.firstName?'input-error':""}
+        {...register("firstName",{
+          required:true,
+          minLength:{value:3,message:'min length at least 3'},
+          maxLength:{value:6,message:'max length at most 10 '}
+        })} />
+        {errors.firstName && <p className='error-msg'>{errors.firstName.message}</p>}
+         {/* ///register with this anme firstname */}
+      </div>
+```
