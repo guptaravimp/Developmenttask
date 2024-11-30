@@ -110,3 +110,14 @@ export default App;
 
 ```
 #### Now when you see you console you will find your  entered data that you enter in form input
+# 4 lets use validation that this input field is required 
+### a.required field 
+```
+    <input {...register("lastName", { required: true })} />
+```
+### b. min length and max length input 
+```
+ <input {...register("firstName", { required: true, maxLength: 20 })} />
+```
+
+Now for all type check the documentation :   https://www.react-hook-form.com/get-started
