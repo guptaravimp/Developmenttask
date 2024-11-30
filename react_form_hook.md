@@ -158,5 +158,61 @@ Now for all type check the documentation :   https://www.react-hook-form.com/get
 const { register, handleSubmit, formState: { errors,isSubmitting } } = useForm();
 ```
 ```
-  <input type="submit" disabled={isSubmitting}/>
+<input 
+        type="submit" 
+        disabled={isSubmitting} 
+        value={isSubmitting ? "Submitting..." : "Submit"} 
+      />
+```
+#  Now our full code 
+```
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import './App.css';
+
+function App() {
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+
+  async function onSubmit(data) {
+    // Simulate an API call
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    console.log("Submitting the form: ", data);
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>First Name</label>
+        <input 
+          className={errors.firstName ? 'input-error' : ""}
+          {...register("firstName", {
+            required: "First name is required",
+            minLength: { value: 3, message: 'Min length at least 3' },
+            maxLength: { value: 6, message: 'Max length at most 6' }
+          })} 
+        />
+        {errors.firstName && <p className='error-msg'>{errors.firstName.message}</p>}
+      </div>
+      <div>
+        <label>Middle Name</label>
+        <input {...register('middleName')} />
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input 
+          {...register("lastName", { required: "Last name is required" })} 
+        />
+        {errors.lastName && <p className='error-msg'>{errors.lastName.message}</p>}
+      </div>
+      <input 
+        type="submit" 
+        disabled={isSubmitting} 
+        value={isSubmitting ? "Submitting..." : "Submit"} 
+      />
+    </form>
+  );
+}
+
+export default App;
+
 ```
