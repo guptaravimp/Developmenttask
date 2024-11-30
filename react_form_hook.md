@@ -40,5 +40,73 @@ function App() {
 
 export default App;
 ```
+### Now register our all input area with form 
+```
+<div>
+      <label>First Name</label>
+        <input {...register("firstName")} />
+      </div>
+      <div>
+        <label>Middle Name</label>
+        <input {...register("middleName")} />
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input {...register("lastName")} />
+      </div>
+      <input type="submit" />
+```
+### now use handleSubmit to to send pr print our data
+```
+<form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>First Name</label>
+        <input {...register("firstName")} />
+      </div>
+      <div>
+        <label>Middle Name</label>
+        <input {...register("middleName")} />
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input {...register("lastName")} />
+      </div>
+      <input type="submit" />
+    </form>
+```
+### Now overall code lokks like this
+```
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
+function App() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
+  // The `onSubmit` function receives the form data as a parameter
+  function onSubmit(data) {
+    console.log("Submitting the form: ", data);
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>First Name</label>
+        <input {...register("firstName")} />
+      </div>
+      <div>
+        <label>Middle Name</label>
+        <input {...register("middleName")} />
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input {...register("lastName")} />
+      </div>
+      <input type="submit" />
+    </form>
+  );
+}
+
+export default App;
+
+```
+#### Now when you see you console you will find your  entered data that you enter in form input
