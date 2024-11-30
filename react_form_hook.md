@@ -11,7 +11,7 @@ npm create vite@latest
 npm install react-hook-form
 ```
 # Lets use this 
-### 3 now first we use below code inside the function where we use this ho0k form to use form 
+# 3 now first we use below code inside the function where we use this ho0k form to use form 
 ```
 const { register, handleSubmit, formState: { errors } } = useForm();
 ```
