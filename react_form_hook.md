@@ -121,3 +121,18 @@ export default App;
 ```
 
 Now for all type check the documentation :   https://www.react-hook-form.com/get-started
+
+# extra validation 
+## lets use some code so that any input take input greater than 3 character 
+```
+<div>
+        <label>First Name</label>
+        <input {...register("firstName",{
+          required:true,
+          minLength:{value:3,message:'min length at least 3'},maxLength:6
+        })} />
+        {errors.firstName && <p>{errors.firstName.message}</p>}
+         {/* ///register with this anme firstname */}
+      </div>
+```
+##### it will show message below input that min length at least 3 when input is <3 character 
