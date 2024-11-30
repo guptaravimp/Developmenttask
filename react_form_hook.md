@@ -129,7 +129,8 @@ Now for all type check the documentation :   https://www.react-hook-form.com/get
         <label>First Name</label>
         <input {...register("firstName",{
           required:true,
-          minLength:{value:3,message:'min length at least 3'},maxLength:6
+          minLength:{value:3,message:'min length at least 3'},
+          maxLength:{value:6,message:'max length at most 10 '}
         })} />
         {errors.firstName && <p>{errors.firstName.message}</p>}
          {/* ///register with this anme firstname */}
