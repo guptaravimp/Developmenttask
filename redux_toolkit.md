@@ -30,6 +30,9 @@ import { store } from './app/store'
 import { Provider } from 'react-redux'
 ```
 ###  and wrap the app inside Provider and Store 
+####  Why we do this ?
+because we want that including app component and every file can access the state defined inside store 
+matlab sidhi si baat ye hai ki sabhi state jo bhi hai store ke ander usko sabhi components access kar paye esiliye ham aisa kar rahe hai 
 ```
    <Provider store={store}>
     <App />
