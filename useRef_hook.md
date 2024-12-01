@@ -1,4 +1,5 @@
-# getting started with useref hook 
+# getting started with useref hook- Reference Documentation : https://react.dev/reference/react/useRef
+
 The useRef hook in React is used to persist values across renders without causing re-renders when the value changes. It is commonly used to access or interact with DOM elements directly or to keep a mutable variable.
 # 1 setup react vite project first 
 ```
@@ -165,6 +166,44 @@ export default App
 ```
 # see the ecreenshot 
 ![Screenshot 2024-12-01 230808](https://github.com/user-attachments/assets/58d7062f-92ef-422d-b5f9-7e94cbf49001)
+# let create a stop watch 
+see the App.jsx code that conatrin all logic and ui code 
+```
+import React, { useEffect, useRef, useState } from 'react'
 
+function App() {
+ 
+  const [time,settime]=useState(0);
+  let timerRef=useRef(null);
+  // important that setInterval will return the value 
+  function startTimer(){
+     timerRef.current=setInterval(() => {
+      settime(time=>time+1);
+     }, 100);
+  }
+  function stopTimer(){
+      clearInterval(timerRef.current)
+      timerRef=null;
+  }
+  function resetTimer(){
+     stopTimer();
+     settime(0);
+  }
+  return (
+    <div>
+     
+      <h2>StopWatch:{time} seconds</h2>
+      <button  onClick={startTimer}>Start</button>
+      <br /><br />
+      <button onClick={stopTimer}>Stop</button>   <br /><br />
+      <button onClick={resetTimer}>Reset</button>
+    </div>
+  )
+}
+
+export default App
+
+```
+Thank You !
 
 
