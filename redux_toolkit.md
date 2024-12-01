@@ -58,5 +58,9 @@ createRoot(document.getElementById('root')).render(
 )
 
 ```
+##  Impo -> Path ko change karna mat bhulna ki store kaha pada hai jaise ki neeche dekho 
+```
+import { store } from './Redux/store.js'
+```
 
 
