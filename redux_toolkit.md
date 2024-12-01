@@ -15,6 +15,7 @@ npm install react-redux
 ```
 # 3 lets create a Store 
 ##  imppppppp  Go to src file and craete a (Redux) folder and Inside Redux create a file name as (store.js)
+![Screenshot 2024-12-01 165716](https://github.com/user-attachments/assets/e170f0ea-12bd-4bf7-b4fd-2d3e77362431)
 ### Now go to Store.js insert below code and can atke a reference : https://redux-toolkit.js.org/tutorials/quick-start
 ```
 import { configureStore } from '@reduxjs/toolkit'
@@ -66,6 +67,7 @@ import { store } from './Redux/store.js'
 #### again Bhai documentation bhi dekh lo : https://redux-toolkit.js.org/tutorials/quick-start#create-a-redux-state-slice
 ##### Now Go to src file and create a Folder name as (features) and uske ander folder create karo let (Counter) fearture and inside folder let createb (CounterSlice.jsx)
 ####### screenshot
+![Screenshot 2024-12-01 165732](https://github.com/user-attachments/assets/611590e2-a7a7-4120-9a79-b0e403838d15)
 ## Now go inside slice and import createslice 
 ```
 import { createSlice } from '@reduxjs/toolkit'
@@ -199,7 +201,7 @@ function App() {
   return (
     <div className='container'>
         <button onClick={handleIncrementCLick}>+</button>
-        <p>Count</p>
+         <p>Count:{count}</p>
         <button onClick={handleDecrementClick}>-</button>
     </div>
   );
@@ -209,7 +211,7 @@ export default App;
 
 ```
 
-
+# Now check the ui and see the all functiona is working good 
 
 
 
