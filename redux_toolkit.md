@@ -213,5 +213,108 @@ export default App;
 
 # Now check the ui and see the all functiona is working good 
 
+#  important-> let we create a action to reset the count 
+so go to first app.jsx create a button of reset and use handler to reset like this 
+```
+<button onClick={handleresetclick}>reset</button>
+```
+#### and let create a action meand dispatch but before dispatch we have to create a reducer function of rest logic so go to (slice) file and add below code inside reducer 
+```
+resetcount:(state)=>{
+      state.value=0;
+    },
+```
+#### Now add this inside export 
+```
+export const { increment, decrement,
+     incrementByAmount ,resetcount} = counterSlice.actions;
+```
+#### Now go to App.jsx and dispatch this action and import this 
+```
+import { decrement, increment, resetcount } from './features/counter/counterSlice';
+
+```
+### Now dispatch this inside function
+```
+function handleresetclick(){
+    dispatch(resetcount())
+  }
+```
+#  Now see the complete code of both the file 
+## App.jsx
+```
+import React from 'react';
+import {useSelector,useDispatch} from 'react-redux'
+import './App.css'
+import { decrement, increment, resetcount } from './features/counter/counterSlice';
+function App() {
+  const count=useSelector((state)=>state.
+  counter.value)
+  const dispatch=useDispatch()
+  function handleDecrementClick(){
+      dispatch(increment())
+  }
+  function handleIncrementCLick(){
+      dispatch(decrement())
+  }
+  function handleresetclick(){
+    dispatch(resetcount())
+  }
+  return (
+    <div className='container'>
+        <button onClick={handleIncrementCLick}>+</button>
+        <p>Count:{count}</p>
+        <button onClick={handleDecrementClick}>-</button>
+        <button onClick={handleresetclick}>reset</button>
+    </div>
+  );
+}
+
+export default App;
+
+```
+## counterSlice.jsx
+```
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  value: 0,
+};
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state) => {
+      // Redux Toolkit allows us to write "mutating" logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a "draft state" and produces a brand new
+      // immutable state based off those changes.
+      state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
+    },
+    incrementByAmount: (state, action) => {
+      state.value += action.payload;
+    },
+    resetcount:(state)=>{
+      state.value=0;
+    },
+  },
+});
+
+// Action creators are generated for each case reducer function.
+export const { increment, decrement,
+     incrementByAmount ,resetcount} = counterSlice.actions;
+
+export default counterSlice.reducer;
+
+```
+
+
+Same as we can implement actopn and dispatch this to see the refelect on ui 
+
+
 
 
