@@ -213,35 +213,35 @@ export default App;
 
 # Now check the ui and see the all functiona is working good 
 
-#  important-> let we create a action to reset the count 
-so go to first app.jsx create a button of reset and use handler to reset like this 
+#  7->important-> let we create a action to reset the count 
+   so go to first app.jsx create a button of reset and use handler to reset like this 
 ```
 <button onClick={handleresetclick}>reset</button>
 ```
-#### and let create a action meand dispatch but before dispatch we have to create a reducer function of rest logic so go to (slice) file and add below code inside reducer 
+   #### and let create a action meand dispatch but before dispatch we have to create a reducer function of rest logic so go to (slice) file and add below code inside reducer 
 ```
 resetcount:(state)=>{
       state.value=0;
     },
 ```
-#### Now add this inside export 
+   #### Now add this inside export 
 ```
 export const { increment, decrement,
      incrementByAmount ,resetcount} = counterSlice.actions;
 ```
-#### Now go to App.jsx and dispatch this action and import this 
+   #### Now go to App.jsx and dispatch this action and import this 
 ```
 import { decrement, increment, resetcount } from './features/counter/counterSlice';
 
 ```
-### Now dispatch this inside function
+   ### Now dispatch this inside function
 ```
 function handleresetclick(){
     dispatch(resetcount())
   }
 ```
 #  Now see the complete code of both the file 
-## App.jsx
+   ## App.jsx
 ```
 import React from 'react';
 import {useSelector,useDispatch} from 'react-redux'
@@ -273,7 +273,7 @@ function App() {
 export default App;
 
 ```
-## counterSlice.jsx
+   ## counterSlice.jsx
 ```
 import { createSlice } from '@reduxjs/toolkit';
 
