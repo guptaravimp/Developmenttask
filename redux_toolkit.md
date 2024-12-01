@@ -138,7 +138,7 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions
 
 export default counterSlice.reducer
 ```
-# Add Slice Reducers to the Store
+# 5 Add Slice Reducers to the Store
 ## Now Going to register our slice to store 
 ### Now go to store.jsx and import below code 
 ```
@@ -160,6 +160,55 @@ export const store = configureStore({
   },
 })
 ```
+# 6->Now let create a ui and see that how it work 
+## Go to App.jsx 
+#### agar store me se koi data ko nikalna chahata hu ya kisis  state km access karna chataa hu then we use -> (useSelector) Hook like this 
+let we access the initail value of counter 
+
+impppppppp-> that will access the value inside the state name as( counter) and inside this we access the (value )
+```
+  const count=useSelector((state)=>state.counter.value)
+
+```
+### Now if want to do action then use dispatch 
+let use dispatch method inside app.jsx
+```
+const dispatch=useDispatch()
+```
+##### Now let we want to dispatch the increment reducer then use 
+```
+dispatch(increment())
+```
+
+## Complete code look like this
+```
+import React from 'react';
+import {useSelector,useDispatch} from 'react-redux'
+import './App.css'
+import { decrement, increment } from './features/counter/counterSlice';
+function App() {
+  const count=useSelector((state)=>state.
+  counter.value)
+  const dispatch=useDispatch()
+  function handleDecrementClick(){
+      dispatch(increment())
+  }
+  function handleIncrementCLick(){
+      dispatch(decrement())
+  }
+  return (
+    <div className='container'>
+        <button onClick={handleIncrementCLick}>+</button>
+        <p>Count</p>
+        <button onClick={handleDecrementClick}>-</button>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
 
 
 
