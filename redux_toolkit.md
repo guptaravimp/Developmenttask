@@ -138,7 +138,28 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions
 
 export default counterSlice.reducer
 ```
-
+# Add Slice Reducers to the Store
+## Now Going to register our slice to store 
+### Now go to store.jsx and import below code 
+```
+import { counterReducer } from '../features/counter/counterSLice'
+```
+### and add this to register 
+```
+ reducer: {
+    counter:counterReducer
+  },
+```
+Full code of Store.jsx is 
+```
+import { configureStore } from '@reduxjs/toolkit'
+import { counterReducer } from '../features/counter/counterSLice'
+export const store = configureStore({
+  reducer: {
+    counter:counterReducer
+  },
+})
+```
 
 
 
