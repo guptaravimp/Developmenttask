@@ -86,4 +86,47 @@ export default ChildComponents
       </div>
 ```
 ## Now it will same qa previous problem it re-render on each click button sol here the game come of call back hook 
+## 4 we freeze the function that on we working here is -handleclick function we freeze it then their refernce is not change now child component ka React.memo isse naya function nahi samjhega to re-render nahi karega 
+so use 
+```
+  const handleclick=useCallback(()=>{
+    setcount(count+1)
+  },[])    
+```
 
+# but on doing this our increment function is also freeze and always print same value so here we pass count after update in dependency list of function pass (count)
+```
+ const handleclick=useCallback(()=>{
+    setcount(count+1)
+  },[])   
+```
+## Now complete code of App.jsx 
+```
+import React, { useCallback, useState } from 'react'
+import ChildComponents from './components/ChildComponents';
+
+function App() {
+  const [count,setcount]=useState(0);
+  // function handleclick(){
+  //   setcount(count+1)
+  // }
+   const handleclick=useCallback(()=>{
+    setcount(count+1)
+  },[count])       
+  return (
+    <div>
+      <div>Count:{count}</div>
+      <br />
+
+      <div><button onClick={handleclick}>
+        Increment</button></div>
+        <br />
+        <br />
+      <ChildComponents handeclick={handleclick} buttonname="click me"/>
+    </div>
+  )
+}
+
+export default App
+
+```
