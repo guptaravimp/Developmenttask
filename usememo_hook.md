@@ -23,6 +23,7 @@ const [input,setinput]=useState(0);
 
   // let doubleValue=expensiveTask(input)
   // let usememo hook for momorizxation 
+  // imppppppppp->agar aai hui input ki value pahle se ha tousememo return kar deta nhi to function ko call karke calculate karega 
 let doubleValue=useMemo(()=>expensiveTask(input),[input]);
   return (
     <div>
@@ -36,5 +37,6 @@ let doubleValue=useMemo(()=>expensiveTask(input),[input]);
 }
 
 export default App;
+
 
 ```
