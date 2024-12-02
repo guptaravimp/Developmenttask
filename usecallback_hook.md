@@ -74,5 +74,16 @@ export default ChildComponents
 
 ```
 ## means on warping chilc components inside React.memo our child component will not re-render on same props if the props will change it will re-render again just like meorization algorithms 
-
+# 3 Limitation of React.memo -> it will only work when we send a val like integer string etc but it doesnot work on sending the function in props of childcomponents like 
+## let we send a handleclick functionn in childcomponents 
+```
+<ChildComponents handeclick={handleclick} buttonname="click me"/>
+```
+## let parse it in child components 
+```
+<div>
+        <button onClick={props.handeclick}>{props.buttonname}</button>
+      </div>
+```
+## Now it will same qa previous problem it re-render on each click button sol here the game come of call back hook 
 
