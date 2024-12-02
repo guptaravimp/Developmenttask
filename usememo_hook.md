@@ -1,4 +1,5 @@
 # Getting started with usememo hook 
+### see this documentation for reference : https://react.dev/reference/react/useMemo
 The useMemo hook in React is used to optimize the performance of functional components by memoizing the result of expensive calculations. It ensures that the computation is only performed when one of its dependencies changes, reducing unnecessary re-renders.
 # 1 SetUp React Vite Project 
 ```
