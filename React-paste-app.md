@@ -46,10 +46,10 @@ npm install react-router-dom
 npm install @reduxjs/toolkit
 npm install react-redux
 ```
-## 5- Now run this project 
+## 5-> Now run this project 
 ```
 npm run dev
 ```
-## 5- Now See all the dependencies here 
+## 6-> Now See all the dependencies here 
 ![Screenshot 2024-12-03 181136](https://github.com/user-attachments/assets/dbb58649-c14c-44c7-8212-5f89b11e7095)
 
