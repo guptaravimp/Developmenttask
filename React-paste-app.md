@@ -50,3 +50,6 @@ npm install react-redux
 ```
 npm run dev
 ```
+## 5- Now See all the dependencies here 
+![Screenshot 2024-12-03 181136](https://github.com/user-attachments/assets/dbb58649-c14c-44c7-8212-5f89b11e7095)
+
