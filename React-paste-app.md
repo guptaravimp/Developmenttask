@@ -12,7 +12,7 @@ npm create vite@latest
 ```
 ## (ii)-> Install Tailwind Css
 ```
-npm install -D tailwindcss postcss autoprefixer
+npm install -D tailwindcss@3 postcss autoprefixer
 npx tailwindcss init -p
 ```
 ### Configure your template paths
