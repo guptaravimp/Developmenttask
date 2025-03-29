@@ -1,6 +1,6 @@
 # Getting started our Project 
 ## 1 -> setup react vite + Tailwind 
-### Open terminal ans paste
+### Open terminal ans paste 
 ## (i)-> Install react Vite (let Project name- React_paste-app)
 ```
 npm create vite@latest
